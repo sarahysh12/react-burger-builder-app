@@ -43,7 +43,7 @@ export const checkAuthTimeout = (expirationTime) => {
 };
 
 
-export const auth = (email, password, isSignUp) => {
+export const auth = (email, password, isSignup) => {
     return dispatch => {
         dispatch(authStart());
         const authData = {
@@ -53,7 +53,7 @@ export const auth = (email, password, isSignUp) => {
         }
         
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
-        if(!isSignUp) {
+        if(!isSignup) {
             url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
         }
         axios.post(url, authData )
@@ -75,7 +75,7 @@ export const auth = (email, password, isSignUp) => {
 
 export const setAuthRedirectPath = (path) => {
     return {
-        type: actionTypes.SET_AUTH_REDIIRECT_PATH,
+        type: actionTypes.SET_AUTH_REDIRECT_PATH,
         path: path
     }
 };

@@ -14,7 +14,7 @@ const purchaseInit = (state, action) => {
 
 
 const purchaseBurgerStart = (state, action) => {
-    return updateObject(state, {loading: false});
+    return updateObject(state, {loading: true});
 }
 
 
