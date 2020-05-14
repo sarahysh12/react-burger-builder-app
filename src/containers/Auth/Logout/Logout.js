@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import { Redirect } from 'react-router-dom';
 
 
-class Logout extends Component {
+const logout = props => {
    
-    componentDidMount () {
-        this.props.onLogout();
-    }
+    useEffect(() => {
+        props.onLogout();
+    });
 
-    render() {
-        return(
-            <Redirect to="/"/>
-        );
-    }
+    return(
+        <Redirect to="/"/>
+    );
 }
 const mapDispatchToPros = dispatch => {
     return {
@@ -22,4 +20,4 @@ const mapDispatchToPros = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToPros)(Logout);
+export default connect(null, mapDispatchToPros)(logout);
